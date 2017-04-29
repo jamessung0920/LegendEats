@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4FD40656E50260FFBCA98E56 /* Pods_LegendEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */; };
 		D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33645161EADD05700ADCECE /* AppDelegate.swift */; };
-		D33645191EADD05700ADCECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33645181EADD05700ADCECE /* ViewController.swift */; };
 		D336451C1EADD05700ADCECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D336451A1EADD05700ADCECE /* Main.storyboard */; };
 		D336451E1EADD05700ADCECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D336451D1EADD05700ADCECE /* Assets.xcassets */; };
 		D33645211EADD05700ADCECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D336451F1EADD05700ADCECE /* LaunchScreen.storyboard */; };
@@ -18,6 +17,10 @@
 		D336454D1EADF25C00ADCECE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336454A1EADF25C00ADCECE /* HomeViewController.swift */; };
 		D336454E1EADF25C00ADCECE /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336454B1EADF25C00ADCECE /* ResetPasswordViewController.swift */; };
 		D336454F1EADF25C00ADCECE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336454C1EADF25C00ADCECE /* SignUpViewController.swift */; };
+		D3EC714B1EB4C17A0059E7C8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714A1EB4C17A0059E7C8 /* FirstViewController.swift */; };
+		D3EC714D1EB4C1800059E7C8 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */; };
+		D3EC714F1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */; };
+		D3EC71511EB4C18C0059E7C8 /* refModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC71501EB4C18C0059E7C8 /* refModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +29,6 @@
 		901BA97069D0B369B497F77E /* Pods-LegendEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.release.xcconfig"; sourceTree = "<group>"; };
 		D33645131EADD05700ADCECE /* LegendEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegendEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33645161EADD05700ADCECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D33645181EADD05700ADCECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D336451B1EADD05700ADCECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D336451D1EADD05700ADCECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33645201EADD05700ADCECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,10 @@
 		D336454A1EADF25C00ADCECE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D336454B1EADF25C00ADCECE /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D336454C1EADF25C00ADCECE /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D3EC714A1EB4C17A0059E7C8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		D3EC71501EB4C18C0059E7C8 /* refModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = refModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +95,14 @@
 			isa = PBXGroup;
 			children = (
 				D33645161EADD05700ADCECE /* AppDelegate.swift */,
-				D33645181EADD05700ADCECE /* ViewController.swift */,
 				D336454A1EADF25C00ADCECE /* HomeViewController.swift */,
 				D336454B1EADF25C00ADCECE /* ResetPasswordViewController.swift */,
 				D336454C1EADF25C00ADCECE /* SignUpViewController.swift */,
 				D33645481EADF23B00ADCECE /* LoginViewController.swift */,
+				D3EC714A1EB4C17A0059E7C8 /* FirstViewController.swift */,
+				D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */,
+				D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */,
+				D3EC71501EB4C18C0059E7C8 /* refModel.swift */,
 				D336451A1EADD05700ADCECE /* Main.storyboard */,
 				D336451D1EADD05700ADCECE /* Assets.xcassets */,
 				D336451F1EADD05700ADCECE /* LaunchScreen.storyboard */,
@@ -230,10 +239,13 @@
 			files = (
 				D336454F1EADF25C00ADCECE /* SignUpViewController.swift in Sources */,
 				D33645491EADF23B00ADCECE /* LoginViewController.swift in Sources */,
-				D33645191EADD05700ADCECE /* ViewController.swift in Sources */,
 				D336454E1EADF25C00ADCECE /* ResetPasswordViewController.swift in Sources */,
+				D3EC714D1EB4C1800059E7C8 /* SheetViewController.swift in Sources */,
 				D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */,
 				D336454D1EADF25C00ADCECE /* HomeViewController.swift in Sources */,
+				D3EC71511EB4C18C0059E7C8 /* refModel.swift in Sources */,
+				D3EC714B1EB4C17A0059E7C8 /* FirstViewController.swift in Sources */,
+				D3EC714F1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@ import Firebase
 import FirebaseAuth
 
 
+var ref: FIRDatabaseReference!
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,10 +24,17 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        self.title = "食客傳說"
+        self.navigationController?.navigationBar.barTintColor = UIColor.lightGray
     }
     
+    @IBAction func ToFirst(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
-    @IBAction func logOutAction(sender: AnyObject) {
+    @IBAction func logOutAction(_ sender: Any) {
         if FIRAuth.auth()?.currentUser != nil {
             do {
                 try FIRAuth.auth()?.signOut()
@@ -36,5 +45,6 @@ class HomeViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+
     }
 }

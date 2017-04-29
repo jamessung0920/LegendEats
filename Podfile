@@ -8,5 +8,5 @@ target 'LegendEats' do
   # Pods for LegendEats
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-
+  pod 'Firebase/Database'
 end
