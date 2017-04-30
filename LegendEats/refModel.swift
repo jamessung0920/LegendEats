@@ -10,10 +10,12 @@ class refModel
 {
     var name: String?
     var number: String?
+    var meall: String?
     
-    init(name: String?, number: String?)
+    init(name: String?, number: String?, meall:String?)
     {
         self.name = name;
         self.number = number;
+        self.meall = meall;
     }
 }

@@ -147,7 +147,6 @@
 				TargetAttributes = {
 					D33645121EADD05700ADCECE = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 4Q4HKR555W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -371,12 +370,14 @@
 			baseConfigurationReference = 5F28B8B8A76667D5BBA7549C /* Pods-LegendEats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Q4HKR555W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LegendEats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = james.LegendEats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -385,12 +386,14 @@
 			baseConfigurationReference = 901BA97069D0B369B497F77E /* Pods-LegendEats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Q4HKR555W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LegendEats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = james.LegendEats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

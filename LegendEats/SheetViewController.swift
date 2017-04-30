@@ -23,7 +23,8 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let sheetdata: refModel
         sheetdata = sheet[indexPath.row]
         cell.namelb.text = sheetdata.name
-        cell.numberlb.text = sheetdata.number 
+        cell.numberlb.text = sheetdata.number
+        cell.meallb.text = sheetdata.meall
         return cell
         
     }
@@ -44,8 +45,9 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let sheetOjbect = student.value as? [String: AnyObject]
                     let sheetname = sheetOjbect?["student name"]
                     let sheetnumber = sheetOjbect?["student number"]
+                    let sheetmeal = sheetOjbect?["meal"]
                     
-                    let sheetdata = refModel(name: sheetname as! String?, number: sheetnumber as! String?)
+                    let sheetdata = refModel(name: sheetname as! String?, number: sheetnumber as! String?, meall: sheetmeal as! String?)
                     self.sheet.append(sheetdata)
                 }
                 

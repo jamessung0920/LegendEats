@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UIPickerViewDelegate {
     
     
     
@@ -19,10 +19,13 @@ class FirstViewController: UIViewController {
     {
         data()
     }
+    @IBOutlet weak var meal: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
+    var meals = ["black tea", "green tea", "milk tea"]
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference().child("student")
-        
+        pickerView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -35,11 +38,27 @@ class FirstViewController: UIViewController {
     {
         let key = ref.childByAutoId().key
         let student = [ "student number": number.text! as String,
-                        "student name": name.text! as String
+                        "student name": name.text! as String,
+                        "meal":meal.text! as String
                       ]
         ref.child(key).setValue(student)
     }
-    
+    func numberOfComponent(in pickerView: UIPickerView) ->Int
+    {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) ->Int
+    {
+        return meals.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent: Int) ->String?
+    {
+        return meals[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        meal.text = meals[row]
+    }
     /*
     // MARK: - Navigation
 
