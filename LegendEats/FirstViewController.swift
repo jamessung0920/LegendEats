@@ -42,6 +42,11 @@ class FirstViewController: UIViewController, UIPickerViewDelegate {
                         "meal":meal.text! as String
                       ]
         ref.child(key).setValue(student)
+        //ref.child("student").child().setValue(["student name": "fuck"])
+        
+        
+        
+        
     }
     func numberOfComponent(in pickerView: UIPickerView) ->Int
     {

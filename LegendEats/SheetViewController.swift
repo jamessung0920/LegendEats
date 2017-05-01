@@ -54,6 +54,15 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.table.reloadData()
             }
         })
+        
+        //撈出指定學號的指定資料
+        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "student number").queryEqual(toValue : "B10215049")
+        
+        query.observe(.value, with:{ (snapshot: FIRDataSnapshot) in
+            for snap in snapshot.children {
+                print((snap as! FIRDataSnapshot).childSnapshot(forPath: "meal"))
+            }
+        })
 
     }
 
