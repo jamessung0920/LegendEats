@@ -9,4 +9,5 @@ target 'LegendEats' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'FoldingCell', '~> 2.0.3'
 end
