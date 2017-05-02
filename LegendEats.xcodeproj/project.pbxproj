@@ -334,8 +334,8 @@
 		D34E0DF71EB8DABC007CF80D /* thai_shrimp_cake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D34E0CB71EB8DABC007CF80D /* thai_shrimp_cake.jpg */; };
 		D34E0DF81EB8DABC007CF80D /* vegetable_curry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D34E0CB81EB8DABC007CF80D /* vegetable_curry.jpg */; };
 		D34E0DF91EB8DABC007CF80D /* white_chocolate_donut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D34E0CB91EB8DABC007CF80D /* white_chocolate_donut.jpg */; };
-		D34E0DFC1EB8DBB7007CF80D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34E0DFB1EB8DBB7007CF80D /* GoogleService-Info.plist */; };
 		D34E0DFE1EB8DC18007CF80D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34E0DFD1EB8DC18007CF80D /* Info.plist */; };
+		D34E0E001EB8DEFA007CF80D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34E0DFF1EB8DEFA007CF80D /* GoogleService-Info.plist */; };
 		D370C4D51EB7A322009E93CF /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370C4D41EB7A322009E93CF /* TableCell.swift */; };
 		D370C4D91EB7A443009E93CF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370C4D61EB7A443009E93CF /* DetailViewController.swift */; };
 		D370C4DA1EB7A443009E93CF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370C4D71EB7A443009E93CF /* UserViewController.swift */; };
@@ -676,8 +676,8 @@
 		D34E0CB71EB8DABC007CF80D /* thai_shrimp_cake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thai_shrimp_cake.jpg; sourceTree = "<group>"; };
 		D34E0CB81EB8DABC007CF80D /* vegetable_curry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vegetable_curry.jpg; sourceTree = "<group>"; };
 		D34E0CB91EB8DABC007CF80D /* white_chocolate_donut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white_chocolate_donut.jpg; sourceTree = "<group>"; };
-		D34E0DFB1EB8DBB7007CF80D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D34E0DFD1EB8DC18007CF80D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D34E0DFF1EB8DEFA007CF80D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D370C4D41EB7A322009E93CF /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		D370C4D61EB7A443009E93CF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D370C4D71EB7A443009E93CF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -759,7 +759,7 @@
 		D34E0B771EB8DABB007CF80D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D34E0DFB1EB8DBB7007CF80D /* GoogleService-Info.plist */,
+				D34E0DFF1EB8DEFA007CF80D /* GoogleService-Info.plist */,
 				D34E0DFD1EB8DC18007CF80D /* Info.plist */,
 				D34E0B781EB8DABB007CF80D /* Assets.xcassets */,
 				D34E0B7A1EB8DABB007CF80D /* iconbeast-lite-300 */,
@@ -1289,7 +1289,7 @@
 				D34E0D701EB8DABC007CF80D /* old-phone.png in Resources */,
 				D34E0DEC1EB8DABC007CF80D /* egg_benedict.jpg in Resources */,
 				D34E0D0D1EB8DABC007CF80D /* connectivity-bar.png in Resources */,
-				D34E0DFC1EB8DBB7007CF80D /* GoogleService-Info.plist in Resources */,
+				D34E0E001EB8DEFA007CF80D /* GoogleService-Info.plist in Resources */,
 				D34E0DC81EB8DABC007CF80D /* text-list.png in Resources */,
 				D34E0D451EB8DABC007CF80D /* heart-rate.png in Resources */,
 				D34E0D9B1EB8DABC007CF80D /* satellite.png in Resources */,
