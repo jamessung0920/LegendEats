@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qGe-AI-gP9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="fqI-tn-5iE">
             <objects>
-                <viewController id="pHr-FP-01c" customClass="LoginViewController" customModule="LegendEats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="pHr-FP-01c" customClass="LoginViewController" customModule="LegendEats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aFM-hA-wFE"/>
                         <viewControllerLayoutGuide type="bottom" id="cWV-nO-x9f"/>
@@ -32,13 +32,13 @@
                                     <segue destination="eaE-HM-yhK" kind="presentation" id="MqV-y1-dHY"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iC-Yr-4x0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="b123456789@ntust.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iC-Yr-4x0">
                                 <rect key="frame" x="87" y="318" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-1N-KFc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456789" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWX-1N-KFc">
                                 <rect key="frame" x="87" y="356" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -535,15 +535,25 @@
         <scene sceneID="MZh-S0-TWh">
             <objects>
                 <viewController id="m4V-0i-W6l" customClass="UserViewController" customModule="LegendEats" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="y8h-B8-Nwu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="y8h-B8-Nwu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jkg-iH-YZr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jkg-iH-YZr" id="qUh-BT-Cnu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="User" id="IBl-5l-Grt">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cYE-8n-h6w">
+                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="eR7-EG-mWO">
                             <connections>
-                                <action selector="logOutAction:" destination="m4V-0i-W6l" id="8nd-SD-ube"/>
+                                <action selector="LogOutAction:" destination="m4V-0i-W6l" id="k1v-6m-IuE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -555,7 +565,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jde-Iu-Ikc">
             <objects>
-                <tabBarController id="qGe-AI-gP9" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="qGe-AI-gP9" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="I7m-qP-u9j">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -570,11 +580,11 @@
             </objects>
             <point key="canvasLocation" x="398" y="-1555"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--User-->
         <scene sceneID="2lb-tT-e95">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rR7-XZ-uP9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="man.png" selectedImage="man.png" id="bPy-fF-NyK"/>
+                    <tabBarItem key="tabBarItem" title="User" image="man.png" selectedImage="man.png" id="bPy-fF-NyK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2L-a7-z5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -613,8 +623,8 @@
         <image name="man.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d7R-4T-WIa"/>
-        <segue reference="zck-D5-27A"/>
+        <segue reference="MqV-y1-dHY"/>
         <segue reference="jCO-ed-QLw"/>
+        <segue reference="beR-1q-6vA"/>
     </inferredMetricsTieBreakers>
 </document>
