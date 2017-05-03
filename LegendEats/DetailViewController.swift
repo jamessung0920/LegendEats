@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController, UIPickerViewDelegate {
     
@@ -19,35 +20,52 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var lbmeal: UILabel!
     @IBOutlet weak var lbpicker: UIPickerView!
-    if receipe.name == ""李媽媽""{
-    var meals = ["black tea", "green tea", "milk tea"]
+    var meals = [String]()
+    @IBOutlet weak var textnum: UITextField!
+    
+    
+    @IBAction func submit(_ sender: UIButton)
+    {
+        if lbmeal.text! == "今天想吃什麼呢？" || textnum.text! == ""
+        {
+            let alertController = UIAlertController(title:"尚未完成訂餐", message:"返回訂餐", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "ok!!", style: UIAlertActionStyle.default, handler:nil))
+            present(alertController, animated: true, completion: nil)
+        }
+        else
+        {
+            data()
+            let alertController = UIAlertController(title:"訂餐完成", message:"祝您用餐愉快", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "ok!!", style: UIAlertActionStyle.default, handler:nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
-
-   // @IBAction func submit(_ sender: UIButton) {
-     //   data()
-    //}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = recipe?.name
         imageView?.image = UIImage(named: recipe!.thumbnails)
         nameLabel?.text = recipe!.name
         prepTime?.text = "Prep Time: " + recipe!.prepTime
-        
         lbpicker.delegate = self
-
+        ref = FIRDatabase.database().reference().child("student")
+        if nameLabel?.text == "李媽媽"
+        {
+            meals = ["麵", "飯"]
+        }
+        else if nameLabel?.text == "品客自助餐"
+        {
+            meals = ["排骨", "雞腿"]
+        }
+        else if nameLabel?.text == "豪享來"
+        {
+            meals = ["炒泡麵", "炒意麵"]
+        }
+        else if nameLabel?.text == "古早味"
+        {
+            meals = ["滷肉飯", "雞肉飯"]
+        }
     }
-    //func data()
-    //{
-      //  let key = ref.childByAutoId().key
-        //let student = [ "student number": number.text! as String,
-          //              "student name": name.text! as String,
-            //            "meal":meal.text! as String
-       // ]
-       // ref.child(key).setValue(student)
-        //ref.child("student").child().setValue(["student name": "fuck"])
-        
-   // }
-
     func numberOfComponent(in pickerView: UIPickerView) ->Int
     {
         return 1
@@ -64,5 +82,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     {
         lbmeal.text = meals[row]
     }
-
+    func data()
+    {
+        let key = ref.childByAutoId().key
+        let student = [
+                        "meal":lbmeal.text! as String,
+                        "數量":textnum.text! as String
+        ]
+        ref.child(key).setValue(student)
+    }
 }
