@@ -86,8 +86,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     {
         let key = ref.childByAutoId().key
         let student = [
-                        "meal":lbmeal.text! as String,
-                        "數量":textnum.text! as String
+            "meal":lbmeal.text! as String,
+            "數量":textnum.text! as String
         ]
         ref.child(key).setValue(student)
     }

@@ -1,0 +1,87 @@
+//
+//  UserOrderViewController.swift
+//  LegendEats
+//
+//  Created by 宋佺儒 on 2017/5/3.
+//  Copyright © 2017年 宋佺儒. All rights reserved.
+//
+
+import UIKit
+import Firebase
+
+class UserOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    @IBOutlet weak var table: UITableView!
+    var sheet = [refModel]()
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sheet.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        let sheetdata: refModel
+        sheetdata = sheet[indexPath.row]
+        cell.namelb.text = sheetdata.name
+        cell.numberlb.text = sheetdata.number
+        cell.meallb.text = sheetdata.meall
+        return cell
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        self.title = "訂單"
+        ref = FIRDatabase.database().reference().child("student")
+        ref.observe(FIRDataEventType.value, with:{(snapshot) in
+            if snapshot.childrenCount>0
+            {
+                self.sheet.removeAll()
+                
+                for student in snapshot.children.allObjects as![FIRDataSnapshot]
+                {
+                    let sheetOjbect = student.value as? [String: AnyObject]
+                    let sheetname = sheetOjbect?["student name"]
+                    let sheetnumber = sheetOjbect?["student number"]
+                    let sheetmeal = sheetOjbect?["meal"]
+                    
+                    let sheetdata = refModel(name: sheetname as! String?, number: sheetnumber as! String?, meall: sheetmeal as! String?)
+                    self.sheet.append(sheetdata)
+                }
+                
+                self.table.reloadData()
+            }
+        })
+        
+        //撈出指定學號的指定資料
+        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "student number").queryEqual(toValue : "B10215049")
+        
+        query.observe(.value, with:{ (snapshot: FIRDataSnapshot) in
+            for snap in snapshot.children {
+                print((snap as! FIRDataSnapshot).childSnapshot(forPath: "meal"))
+            }
+        })
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
