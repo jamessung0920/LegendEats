@@ -14,6 +14,7 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var table: UITableView!
     var sheet = [refModel]()
+    var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sheet.count
@@ -23,9 +24,9 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         let sheetdata: refModel
         sheetdata = sheet[indexPath.row]
-        cell.namelb.text = sheetdata.name
-        cell.numberlb.text = sheetdata.number
-        cell.meallb.text = sheetdata.meall
+        cell.emaillb.text = sheetdata.email
+        cell.meallb.text = sheetdata.meal
+        cell.countlb.text = sheetdata.count
         return cell
         
     }
@@ -35,8 +36,8 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Do any additional setup after loading the view.
         self.title = "訂單"
-        ref = FIRDatabase.database().reference().child("student")
-        ref.observe(FIRDataEventType.value, with:{(snapshot) in
+        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "學號信箱").queryEqual(toValue: studentId)
+        query.observe(FIRDataEventType.value, with:{(snapshot) in
             if snapshot.childrenCount>0
             {
                 self.sheet.removeAll()
@@ -44,11 +45,11 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
                 for student in snapshot.children.allObjects as![FIRDataSnapshot]
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
-                    let sheetname = sheetOjbect?["student name"]
-                    let sheetnumber = sheetOjbect?["student number"]
-                    let sheetmeal = sheetOjbect?["meal"]
+                    let sheetemail = sheetOjbect?["餐廳名稱"] as! String?
+                    let sheetmeal = sheetOjbect?["meal"] as! String?
+                    let sheetcount = sheetOjbect?["數量"] as! String?
                     
-                    let sheetdata = refModel(name: sheetname as! String?, number: sheetnumber as! String?, meall: sheetmeal as! String?)
+                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount)
                     self.sheet.append(sheetdata)
                 }
                 
@@ -57,13 +58,16 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         })
         
         //撈出指定學號的指定資料
-        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "student number").queryEqual(toValue : "B10215049")
+        /*let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "student number").queryEqual(toValue : "B10215049")
         
         query.observe(.value, with:{ (snapshot: FIRDataSnapshot) in
             for snap in snapshot.children {
                 print((snap as! FIRDataSnapshot).childSnapshot(forPath: "meal"))
             }
-        })
+        })*/
+        
+        //let userID = FIRAuth.auth()?.currentUser?.uid
+        //print(userID)
         
     }
     

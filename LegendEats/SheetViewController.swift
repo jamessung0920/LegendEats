@@ -22,9 +22,9 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         let sheetdata: refModel
         sheetdata = sheet[indexPath.row]
-        cell.namelb.text = sheetdata.name
-        cell.numberlb.text = sheetdata.number
-        cell.meallb.text = sheetdata.meall
+        cell.emaillb.text = sheetdata.email
+        cell.meallb.text = sheetdata.meal
+        cell.countlb.text = sheetdata.count
         return cell
         
     }
@@ -43,11 +43,11 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 for student in snapshot.children.allObjects as![FIRDataSnapshot]
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
-                    let sheetname = sheetOjbect?["student name"]
-                    let sheetnumber = sheetOjbect?["student number"]
+                    let sheetemail = sheetOjbect?["學號信箱"]
                     let sheetmeal = sheetOjbect?["meal"]
+                    let sheetcount = sheetOjbect?["數量"]
                     
-                    let sheetdata = refModel(name: sheetname as! String?, number: sheetnumber as! String?, meall: sheetmeal as! String?)
+                    let sheetdata = refModel(email: sheetemail as! String?, meal: sheetmeal as! String?, count: sheetcount as! String?)
                     self.sheet.append(sheetdata)
                 }
                 

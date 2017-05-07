@@ -8,14 +8,15 @@
 
 class refModel
 {
-    var name: String?
-    var number: String?
-    var meall: String?
+    var email: String?
+    var meal: String?
+    var count: String?
     
-    init(name: String?, number: String?, meall:String?)
+    
+    init(email: String?, meal: String?, count: String?)
     {
-        self.name = name;
-        self.number = number;
-        self.meall = meall;
+        self.email = email;
+        self.meal = meal;
+        self.count = count;
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class DetailViewController: UIViewController, UIPickerViewDelegate {
     
@@ -17,6 +18,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet var prepTime: UILabel?
     
     var recipe: Recipe?
+    var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
     
     @IBOutlet weak var lbmeal: UILabel!
     @IBOutlet weak var lbpicker: UIPickerView!
@@ -86,6 +88,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     {
         let key = ref.childByAutoId().key
         let student = [
+            "學號信箱":studentId,
+            "餐廳名稱":nameLabel?.text,
             "meal":lbmeal.text! as String,
             "數量":textnum.text! as String
         ]
