@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class DetailViewController: UIViewController, UIPickerViewDelegate {
     
+    @IBOutlet weak var stepper: GMStepper!
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var prepTime: UILabel?
@@ -23,12 +24,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var lbmeal: UILabel!
     @IBOutlet weak var lbpicker: UIPickerView!
     var meals = [String]()
-    @IBOutlet weak var textnum: UITextField!
-    
     
     @IBAction func submit(_ sender: UIButton)
     {
-        if lbmeal.text! == "今天想吃什麼呢？" || textnum.text! == ""
+        if lbmeal.text! == "--請下拉選擇餐點--" || stepper.value == 0.0
         {
             let alertController = UIAlertController(title:"尚未完成訂餐", message:"返回訂餐", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ok!!", style: UIAlertActionStyle.default, handler:nil))
@@ -50,22 +49,23 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         nameLabel?.text = recipe!.name
         prepTime?.text = "Prep Time: " + recipe!.prepTime
         lbpicker.delegate = self
+        stepper.addTarget(self, action: #selector(DetailViewController.stepperValueChanged), for: .valueChanged)
         ref = FIRDatabase.database().reference().child("student")
         if nameLabel?.text == "李媽媽"
         {
-            meals = ["麵", "飯"]
+            meals = ["--請下拉選擇餐點--","麵", "飯"]
         }
         else if nameLabel?.text == "品客自助餐"
         {
-            meals = ["排骨", "雞腿"]
+            meals = ["--請下拉選擇餐點--","排骨", "雞腿"]
         }
         else if nameLabel?.text == "豪享來"
         {
-            meals = ["炒泡麵", "炒意麵"]
+            meals = ["--請下拉選擇餐點--","炒泡麵", "炒意麵"]
         }
         else if nameLabel?.text == "古早味"
         {
-            meals = ["滷肉飯", "雞肉飯"]
+            meals = ["--請下拉選擇餐點--","滷肉飯", "雞肉飯"]
         }
     }
     func numberOfComponent(in pickerView: UIPickerView) ->Int
@@ -84,6 +84,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     {
         lbmeal.text = meals[row]
     }
+    func stepperValueChanged(stepper: GMStepper) {
+        print(stepper.value, terminator: "")
+    }
     func data()
     {
         let key = ref.childByAutoId().key
@@ -91,7 +94,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
             "meal":lbmeal.text! as String,
-            "數量":textnum.text! as String
+            "數量":String(Int(stepper.value)) as String
         ]
         ref.child(key).setValue(student)
     }

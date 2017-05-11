@@ -11,6 +11,7 @@ class refModel
     var email: String?
     var meal: String?
     var count: String?
+    //var shit: String? = "shit"
     
     
     init(email: String?, meal: String?, count: String?)
