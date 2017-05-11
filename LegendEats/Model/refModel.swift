@@ -11,13 +11,15 @@ class refModel
     var email: String?
     var meal: String?
     var count: String?
+    var time: String?
     //var shit: String? = "shit"
     
     
-    init(email: String?, meal: String?, count: String?)
+    init(email: String?, meal: String?, count: String?, time: String?)
     {
         self.email = email;
         self.meal = meal;
         self.count = count;
+        self.time = time;
     }
 }

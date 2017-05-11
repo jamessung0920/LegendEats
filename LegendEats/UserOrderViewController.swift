@@ -13,6 +13,7 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     @IBOutlet weak var table: UITableView!
+
     var sheet = [refModel]()
     var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
     
@@ -27,6 +28,7 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.emaillb.text = sheetdata.email
         cell.meallb.text = sheetdata.meal
         cell.countlb.text = sheetdata.count
+        cell.timelb.text = sheetdata.time
         return cell
         
     }
@@ -48,8 +50,8 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
                     let sheetemail = sheetOjbect?["餐廳名稱"] as! String?
                     let sheetmeal = sheetOjbect?["meal"] as! String?
                     let sheetcount = sheetOjbect?["數量"] as! String?
-                    
-                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount)
+                    let sheettime = sheetOjbect?["訂購時間"] as! String?
+                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime)
                     self.sheet.append(sheetdata)
                 }
                 
@@ -57,6 +59,7 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         })
         
+
         //撈出指定學號的指定資料
         /*let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild: "student number").queryEqual(toValue : "B10215049")
         
@@ -87,5 +90,4 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
-
 }

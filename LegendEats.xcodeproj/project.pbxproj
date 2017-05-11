@@ -345,7 +345,6 @@
 		D3E1CDAF1EC0406C00DDE1B3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1CDAE1EC0406C00DDE1B3 /* ShoppingCartViewController.swift */; };
 		D3E1CDB11EC045F700DDE1B3 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1CDB01EC045F700DDE1B3 /* GMStepper.swift */; };
 		D3EC714B1EB4C17A0059E7C8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714A1EB4C17A0059E7C8 /* FirstViewController.swift */; };
-		D3EC714D1EB4C1800059E7C8 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */; };
 		D3EC714F1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -691,7 +690,6 @@
 		D3E1CDAE1EC0406C00DDE1B3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		D3E1CDB01EC045F700DDE1B3 /* GMStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GMStepper.swift; path = GMStepper/GMStepper.swift; sourceTree = "<group>"; };
 		D3EC714A1EB4C17A0059E7C8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -752,7 +750,6 @@
 				D33645481EADF23B00ADCECE /* LoginViewController.swift */,
 				D336454C1EADF25C00ADCECE /* SignUpViewController.swift */,
 				D336454B1EADF25C00ADCECE /* ResetPasswordViewController.swift */,
-				D3EC714C1EB4C1800059E7C8 /* SheetViewController.swift */,
 				D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */,
 				D370C4D71EB7A443009E93CF /* UserViewController.swift */,
 				D3B2A6A51EBA29B6008022B6 /* UserOrderViewController.swift */,
@@ -1578,7 +1575,6 @@
 				D370C4DB1EB7A443009E93CF /* RecipesTableViewController.swift in Sources */,
 				D3B2A6A61EBA29B6008022B6 /* UserOrderViewController.swift in Sources */,
 				D336454E1EADF25C00ADCECE /* ResetPasswordViewController.swift in Sources */,
-				D3EC714D1EB4C1800059E7C8 /* SheetViewController.swift in Sources */,
 				D3E1CDAF1EC0406C00DDE1B3 /* ShoppingCartViewController.swift in Sources */,
 				D3A8081C1EBA14C200725CCB /* UserTableCell.swift in Sources */,
 				D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */,

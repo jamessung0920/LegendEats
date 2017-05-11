@@ -13,6 +13,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var emaillb: UILabel!
     @IBOutlet weak var countlb: UILabel!
     @IBOutlet weak var meallb: UILabel!
+    @IBOutlet weak var timelb: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

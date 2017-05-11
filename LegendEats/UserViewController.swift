@@ -40,7 +40,8 @@ class UserViewController: UITableViewController{
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "User"
         initializeTheUserOptions()
-    }
+        
+            }
     
     func initializeTheUserOptions() {
         self.userOptions = [UserOption(name: "訂單", thumbnails: "layer.png", index: 1),
