@@ -20,7 +20,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     
     var recipe: Recipe?
     var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
-    var time1 = Timer()
+    var result: String?
+    
     
     @IBOutlet weak var lbmeal: UILabel!
     @IBOutlet weak var lbpicker: UIPickerView!
@@ -51,8 +52,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         prepTime?.text = "Prep Time: " + recipe!.prepTime
         lbpicker.delegate = self
         stepper.addTarget(self, action: #selector(DetailViewController.stepperValueChanged), for: .valueChanged)
-        time1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DetailViewController.DateandTime), userInfo: nil, repeats: true)
         ref = FIRDatabase.database().reference().child("student")
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        result = formatter.string(from: date)
         if nameLabel?.text == "李媽媽"
         {
             meals = ["--請下拉選擇餐點--","麵", "飯"]
@@ -92,18 +96,15 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     func data()
     {
         let key = ref.childByAutoId().key
-        let student: [String:Any] =  [
+        let student: [String: Any] = [
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
             "meal":lbmeal.text! as String,
             "數量":String(Int(stepper.value)) as String,
-            "訂購時間":String(describing: time1)
+            "訂購時間":result
         ]
         ref.child(key).setValue(student)
     }
-    func DateandTime()
-    {
-        let date = DateFormatter()
-        date.dateStyle = .full
-    }
+  
+    
 }
