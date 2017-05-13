@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BAAAFAB1EC7076C001F7A2A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */; };
 		4BAAAFAD1EC71AAF001F7A2A /* RestaurantLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAC1EC71AAF001F7A2A /* RestaurantLoginViewController.swift */; };
+		4BAAAFAF1EC74671001F7A2A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAE1EC74671001F7A2A /* RestaurantViewController.swift */; };
 		4FD40656E50260FFBCA98E56 /* Pods_LegendEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */; };
 		D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33645161EADD05700ADCECE /* AppDelegate.swift */; };
 		D336451C1EADD05700ADCECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D336451A1EADD05700ADCECE /* Main.storyboard */; };
@@ -353,6 +354,7 @@
 /* Begin PBXFileReference section */
 		4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		4BAAAFAC1EC71AAF001F7A2A /* RestaurantLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantLoginViewController.swift; sourceTree = "<group>"; };
+		4BAAAFAE1EC74671001F7A2A /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		5F28B8B8A76667D5BBA7549C /* Pods-LegendEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.debug.xcconfig"; sourceTree = "<group>"; };
 		612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegendEats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901BA97069D0B369B497F77E /* Pods-LegendEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.release.xcconfig"; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 				D3E1CDAE1EC0406C00DDE1B3 /* ShoppingCartViewController.swift */,
 				D370C4D61EB7A443009E93CF /* DetailViewController.swift */,
 				4BAAAFAC1EC71AAF001F7A2A /* RestaurantLoginViewController.swift */,
+				4BAAAFAE1EC74671001F7A2A /* RestaurantViewController.swift */,
 				D370C4D31EB7A322009E93CF /* Model */,
 				D336451A1EADD05700ADCECE /* Main.storyboard */,
 				D336451F1EADD05700ADCECE /* LaunchScreen.storyboard */,
@@ -1584,6 +1587,7 @@
 				D3E1CDAF1EC0406C00DDE1B3 /* ShoppingCartViewController.swift in Sources */,
 				4BAAAFAD1EC71AAF001F7A2A /* RestaurantLoginViewController.swift in Sources */,
 				D3A8081C1EBA14C200725CCB /* UserTableCell.swift in Sources */,
+				4BAAAFAF1EC74671001F7A2A /* RestaurantViewController.swift in Sources */,
 				D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */,
 				4BAAAFAB1EC7076C001F7A2A /* SheetViewController.swift in Sources */,
 				D336454D1EADF25C00ADCECE /* HomeViewController.swift in Sources */,
