@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BAAAFA91EC7053D001F7A2A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFA81EC7053D001F7A2A /* SheetViewController.swift */; };
+		4BAAAFAB1EC7076C001F7A2A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */; };
 		4FD40656E50260FFBCA98E56 /* Pods_LegendEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */; };
 		D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33645161EADD05700ADCECE /* AppDelegate.swift */; };
 		D336451C1EADD05700ADCECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D336451A1EADD05700ADCECE /* Main.storyboard */; };
@@ -350,7 +350,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4BAAAFA81EC7053D001F7A2A /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SheetViewController.swift; path = ../../../Desktop/SheetViewController.swift; sourceTree = "<group>"; };
+		4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		5F28B8B8A76667D5BBA7549C /* Pods-LegendEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.debug.xcconfig"; sourceTree = "<group>"; };
 		612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegendEats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901BA97069D0B369B497F77E /* Pods-LegendEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.release.xcconfig"; sourceTree = "<group>"; };
@@ -752,7 +752,7 @@
 				D33645481EADF23B00ADCECE /* LoginViewController.swift */,
 				D336454C1EADF25C00ADCECE /* SignUpViewController.swift */,
 				D336454B1EADF25C00ADCECE /* ResetPasswordViewController.swift */,
-				4BAAAFA81EC7053D001F7A2A /* SheetViewController.swift */,
+				4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */,
 				D3EC714E1EB4C1850059E7C8 /* ViewControllerTableViewCell.swift */,
 				D370C4D71EB7A443009E93CF /* UserViewController.swift */,
 				D3B2A6A51EBA29B6008022B6 /* UserOrderViewController.swift */,
@@ -1577,11 +1577,11 @@
 				D3E1CDB11EC045F700DDE1B3 /* GMStepper.swift in Sources */,
 				D370C4DB1EB7A443009E93CF /* RecipesTableViewController.swift in Sources */,
 				D3B2A6A61EBA29B6008022B6 /* UserOrderViewController.swift in Sources */,
-				4BAAAFA91EC7053D001F7A2A /* SheetViewController.swift in Sources */,
 				D336454E1EADF25C00ADCECE /* ResetPasswordViewController.swift in Sources */,
 				D3E1CDAF1EC0406C00DDE1B3 /* ShoppingCartViewController.swift in Sources */,
 				D3A8081C1EBA14C200725CCB /* UserTableCell.swift in Sources */,
 				D33645171EADD05700ADCECE /* AppDelegate.swift in Sources */,
+				4BAAAFAB1EC7076C001F7A2A /* SheetViewController.swift in Sources */,
 				D336454D1EADF25C00ADCECE /* HomeViewController.swift in Sources */,
 				D34E0B761EB8DA3E007CF80D /* refModel.swift in Sources */,
 				D370C4DA1EB7A443009E93CF /* UserViewController.swift in Sources */,
