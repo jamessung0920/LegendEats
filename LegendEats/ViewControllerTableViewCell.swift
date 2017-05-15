@@ -15,6 +15,13 @@ class ViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var meallb: UILabel!
     @IBOutlet weak var timelb: UILabel!
     
+    
+    @IBOutlet weak var getemaillb: UILabel!
+    @IBOutlet weak var getmeallb: UILabel!
+    @IBOutlet weak var getcountlb: UILabel!
+    @IBOutlet weak var getnotelb: UILabel!
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
