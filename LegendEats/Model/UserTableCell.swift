@@ -14,8 +14,8 @@ class UserTableCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var thumbnailImageView: UIImageView?
     
-    func configurateTheCell(_ useroption: UserOption) {
+    /*func configurateTheCell(_ useroption: UserOption) {
         self.nameLabel?.text = useroption.name
         self.thumbnailImageView?.image = UIImage(named: useroption.thumbnails)
-    }
+    }*/
 }

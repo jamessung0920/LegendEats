@@ -53,10 +53,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         lbpicker.delegate = self
         stepper.addTarget(self, action: #selector(DetailViewController.stepperValueChanged), for: .valueChanged)
         ref = FIRDatabase.database().reference().child("student")
+        
+        //當前系統日期
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         result = formatter.string(from: date)
+        
         if nameLabel?.text == "李媽媽"
         {
             meals = ["--請下拉選擇餐點--","麵", "飯"]

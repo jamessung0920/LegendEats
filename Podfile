@@ -10,4 +10,6 @@ target 'LegendEats' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'FoldingCell', '~> 2.0.3'
+ # pod 'SwiftyButton'
+ # pod 'SwiftyButton/CustomContent'
 end

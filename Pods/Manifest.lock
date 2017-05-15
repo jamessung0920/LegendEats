@@ -34,12 +34,19 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
+  - PureLayout (3.0.2)
+  - SwiftyButton (0.5.0):
+    - SwiftyButton/CustomContent (= 0.5.0)
+  - SwiftyButton/CustomContent (0.5.0):
+    - PureLayout (~> 3.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - FoldingCell (~> 2.0.3)
+  - SwiftyButton
+  - SwiftyButton/CustomContent
 
 SPEC CHECKSUMS:
   Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
@@ -51,7 +58,9 @@ SPEC CHECKSUMS:
   FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SwiftyButton: 7f1c7774a0aa721cbb6ea287742198ea0ee50c05
 
-PODFILE CHECKSUM: 1719a49d7c985420e8c6d32be01627d097d3872d
+PODFILE CHECKSUM: 6ce55a847730786fc4fcf1da4aaab6fc6f9b957f
 
 COCOAPODS: 1.2.1
