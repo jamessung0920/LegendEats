@@ -29,6 +29,7 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.meallb.text = sheetdata.meal
         cell.countlb.text = sheetdata.count
         cell.timelb.text = sheetdata.time
+        cell.getnotelb.text = sheetdata.note
         return cell
         
     }
@@ -48,10 +49,11 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
                     let sheetemail = sheetOjbect?["餐廳名稱"] as! String?
-                    let sheetmeal = sheetOjbect?["meal"] as! String?
+                    let sheetmeal = sheetOjbect?["餐點"] as! String?
                     let sheetcount = sheetOjbect?["數量"] as! String?
                     let sheettime = sheetOjbect?["訂購時間"] as! String?
-                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime)
+                    let sheetnote = sheetOjbect?["備註"] as! String?
+                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime, note: sheetnote)
                     self.sheet.append(sheetdata)
                 }
                 

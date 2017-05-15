@@ -27,7 +27,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.getemaillb.text = sheetdata.email
         cell.getmeallb.text = sheetdata.meal
         cell.getcountlb.text = sheetdata.count
-        cell.getnotelb.text = ""
+        cell.getnotelb.text = sheetdata.note
         return cell
         
     }
@@ -42,10 +42,11 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
                     let sheetemail = sheetOjbect?["學號信箱"] as! String?
-                    let sheetmeal = sheetOjbect?["meal"] as! String?
+                    let sheetmeal = sheetOjbect?["餐點"] as! String?
                     let sheetcount = sheetOjbect?["數量"] as! String?
                     let sheettime = sheetOjbect?["訂購時間"] as! String?
-                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime)
+                    let sheetnote = sheetOjbect?["備註"] as! String?
+                    let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime, note: sheetnote)
                     self.sheet.append(sheetdata)
                 }
                 
