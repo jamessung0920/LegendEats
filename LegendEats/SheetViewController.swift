@@ -45,12 +45,11 @@ class SheetViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
                     let sheetemail = sheetOjbect?["學號信箱"]
-                    let sheetmeal = sheetOjbect?["meal"]
+                    let sheetmeal = sheetOjbect?["餐點"]
                     let sheetcount = sheetOjbect?["數量"]
                     let sheettime = sheetOjbect?["訂餐時間"]
-                    
-                    
-                    let sheetdata = refModel(email: sheetemail as! String?, meal: sheetmeal as! String?, count: sheetcount as! String?, time: sheettime as! String?)
+                    let sheetnote = sheetOjbect?["備註"] as! String?
+                    let sheetdata = refModel(email: sheetemail as! String?, meal: sheetmeal as! String?, count: sheetcount as! String?, time: sheettime as! String?, note: sheetnote as! String?)
                     self.sheet.append(sheetdata)
                 }
                 

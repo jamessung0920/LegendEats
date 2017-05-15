@@ -22,7 +22,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
     var result: String?
     
-    
+    @IBOutlet weak var note: UITextField!
     @IBOutlet weak var lbmeal: UILabel!
     @IBOutlet weak var lbpicker: UIPickerView!
     var meals = [String]()
@@ -102,9 +102,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         let student: [String: Any] = [
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
-            "meal":lbmeal.text! as String,
+            "餐點":lbmeal.text! as String,
             "數量":String(Int(stepper.value)) as String,
-            "訂購時間":result
+            "訂購時間":result,
+            "備註":note.text! as String
         ]
         ref.child(key).setValue(student)
     }
