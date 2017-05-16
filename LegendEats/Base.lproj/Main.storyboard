@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -595,7 +595,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R3h-UR-a9I" id="t7I-Ud-KcK">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="140.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N27-PZ-Qzv">
@@ -764,7 +764,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7d-Ve-QzD" customClass="GMStepper" customModule="LegendEats" customModuleProvider="target">
-                                <rect key="frame" x="89" y="501" width="200" height="66"/>
+                                <rect key="frame" x="87" y="420" width="200" height="66"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="Bwy-Nh-cOt"/>
@@ -1125,7 +1125,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="188"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ime-jD-4Ve" id="ZHa-1g-lLf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="187"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="187.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpN-TR-AsK" userLabel="emaillb">
@@ -1156,11 +1156,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kw-w8-ORt" userLabel="notelb">
+                                                    <rect key="frame" x="199" y="81" width="115" height="85"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countlb" destination="6K9-rP-vQw" id="HTG-Qy-6ga"/>
                                             <outlet property="emaillb" destination="EpN-TR-AsK" id="4mL-Xi-X9U"/>
+                                            <outlet property="getnotelb" destination="2kw-w8-ORt" id="gzI-G9-zY2"/>
                                             <outlet property="meallb" destination="3cH-ht-1hW" id="qdX-6L-pIX"/>
                                             <outlet property="timelb" destination="Lp6-m2-Ku1" id="RqK-jW-GrX"/>
                                         </connections>
@@ -1180,7 +1188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbd-22-mD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038" y="-1203"/>
+            <point key="canvasLocation" x="3037.5999999999999" y="-1203.1484257871066"/>
         </scene>
         <!--User About View Controller-->
         <scene sceneID="eQ0-bA-9dY">
@@ -1198,7 +1206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QlA-ZP-PFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038" y="-2664"/>
+            <point key="canvasLocation" x="3038" y="-507"/>
         </scene>
     </scenes>
     <resources>
