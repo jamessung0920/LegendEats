@@ -62,19 +62,19 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         
         if nameLabel?.text == "李媽媽"
         {
-            meals = ["--請下拉選擇餐點--","麵", "飯"]
+            meals = ["--請下拉選擇餐點--","麵 $60", "飯 $60"]
         }
         else if nameLabel?.text == "品客自助餐"
         {
-            meals = ["--請下拉選擇餐點--","排骨", "雞腿"]
+            meals = ["--請下拉選擇餐點--","排骨 $70", "雞腿 $70"]
         }
         else if nameLabel?.text == "豪享來"
         {
-            meals = ["--請下拉選擇餐點--","炒泡麵", "炒意麵"]
+            meals = ["--請下拉選擇餐點--","炒泡麵 $50", "炒意麵 $50"]
         }
         else if nameLabel?.text == "古早味"
         {
-            meals = ["--請下拉選擇餐點--","滷肉飯", "雞肉飯"]
+            meals = ["--請下拉選擇餐點--","滷肉飯 $35", "雞肉飯 $35"]
         }
     }
     func numberOfComponent(in pickerView: UIPickerView) ->Int
@@ -99,10 +99,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     func data()
     {
         let key = ref.childByAutoId().key
+        let dilimiter = " "
+        let meals = lbmeal.text?.components(separatedBy: dilimiter)
         let student: [String: Any] = [
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
-            "餐點":lbmeal.text! as String,
+            "餐點":meals![0] as String,
             "數量":String(Int(stepper.value)) as String,
             "訂購時間":result,
             "備註":note.text! as String
