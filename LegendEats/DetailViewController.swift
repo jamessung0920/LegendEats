@@ -53,7 +53,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         lbpicker.delegate = self
         stepper.addTarget(self, action: #selector(DetailViewController.stepperValueChanged), for: .valueChanged)
         ref = FIRDatabase.database().reference().child("student")
-        
+
         //當前系統日期
         let date = Date()
         let formatter = DateFormatter()
@@ -100,11 +100,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     {
         let key = ref.childByAutoId().key
         let dilimiter = " "
-        let meals = lbmeal.text?.components(separatedBy: dilimiter)
+        let meal = lbmeal.text?.components(separatedBy: dilimiter)
         let student: [String: Any] = [
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
-            "餐點":meals![0] as String,
+            "餐點":meal![0] as String,
             "數量":String(Int(stepper.value)) as String,
             "訂購時間":result,
             "備註":note.text! as String

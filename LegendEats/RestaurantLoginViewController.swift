@@ -14,13 +14,26 @@ class RestaurantLoginViewController: UIViewController {
 
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var passward: UITextField!
+    var restaurantEmail: [String] = ["Limama@ntust.com",
+                                     "Pinker@ntust.com",
+                                     "Haoxionlai@ntust.com",
+                                     "Gutzaowei@ntust.com"
+                                    ]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //在firebase建立餐廳email
+       /* for index in 0 ..< restaurantEmail.endIndex {
+            FIRAuth.auth()?.createUser(withEmail: restaurantEmail[index], password: "123456")
+            {(user, error) in
+                 print(self.restaurantEmail[index])
+            }
+        } */
+    }
     
     @IBAction func login(_ sender: UIButton) {
-        if self.mail.text == "" || self.passward.text == "" {
-            
-            //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+
+        if !restaurantEmail.contains(self.mail.text!) {
+            let alertController = UIAlertController(title: "Error", message: "You don't have permission to login!!", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -29,26 +42,40 @@ class RestaurantLoginViewController: UIViewController {
             
         } else {
             
-            FIRAuth.auth()?.signIn(withEmail: self.mail.text!, password: self.passward.text!) { (user, error) in
+            if self.mail.text == "" || self.passward.text == "" {
                 
-                if error == nil {
+                //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
+                
+                let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else {
+                
+                FIRAuth.auth()?.signIn(withEmail: self.mail.text!, password: self.passward.text!) { (user, error) in
                     
-                    //Print into the console if successfully logged in
-                    print("You have successfully logged in")
-                    
-                    //Go to the RecipesTableViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier:"restaurant")
-                    self.present(vc!, animated: true, completion: nil)
-                    
-                } else {
-                    
-                    //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                    if error == nil {
+                        
+                        //Print into the console if successfully logged in
+                        print("You have successfully logged in")
+                        
+                        //Go to the RecipesTableViewController if the login is sucessful
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier:"restaurant")
+                        self.present(vc!, animated: true, completion: nil)
+                        
+                    } else {
+                        
+                        //Tells the user that there is an error and then gets firebase to tell them the error
+                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        
+                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
         }
