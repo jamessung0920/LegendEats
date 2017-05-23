@@ -76,6 +76,23 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         {
             meals = ["--請下拉選擇餐點--","滷肉飯 $35", "雞肉飯 $35"]
         }
+        else if nameLabel?.text == "李媽媽1"
+        {
+            meals = ["--請下拉選擇餐點--","麵 $160", "飯 $160"]
+        }
+        else if nameLabel?.text == "品客自助餐1"
+        {
+            meals = ["--請下拉選擇餐點--","排骨 $170", "雞腿 $170"]
+        }
+        else if nameLabel?.text == "豪享來1"
+        {
+            meals = ["--請下拉選擇餐點--","炒泡麵 $150", "炒意麵 $150"]
+        }
+        else if nameLabel?.text == "古早味1"
+        {
+            meals = ["--請下拉選擇餐點--","滷肉飯 $135", "雞肉飯 $135"]
+        }
+
     }
     func numberOfComponent(in pickerView: UIPickerView) ->Int
     {
