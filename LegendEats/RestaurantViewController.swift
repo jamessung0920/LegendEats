@@ -18,8 +18,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var table: UITableView!
     var sheet = [refModel]()
-    //var restaurants = [Restaurant]()
-    //var RestaurantId: String = (FIRAuth.auth()?.currentUser?.email)!
+    var restaurantReceived = [Restaurant]()
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +38,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild:"餐廳名稱").queryEqual(toValue: "李媽媽")
+        let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild:"餐廳名稱").queryEqual(toValue: restaurantReceived[0].restaurantName)
         query.observe(FIRDataEventType.value, with:{(snapshot) in
             if snapshot.childrenCount>0
             {

@@ -34,7 +34,7 @@ class RestaurantLoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         let found = restaurants.filter{ $0.restaurantEmail == self.mail.text}.count > 0
         let foundIndex = restaurants.index{ $0.restaurantEmail == self.mail.text}
-        print(foundIndex)
+
         if !found {
             let alertController = UIAlertController(title: "Error", message: "You don't have permission to login!!", preferredStyle: .alert)
             
@@ -66,8 +66,9 @@ class RestaurantLoginViewController: UIViewController {
                         print("You have successfully logged in")
                         
                         //Go to the RecipesTableViewController if the login is sucessful
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier:"restaurant")
-                        self.present(vc!, animated: true, completion: nil)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier:"restaurant") as! RestaurantViewController
+                        vc.restaurantReceived.append(self.restaurants[foundIndex!])
+                        self.present(vc, animated: true, completion: nil)
                         
                     } else {
                         
