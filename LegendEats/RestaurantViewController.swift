@@ -9,12 +9,18 @@
 import UIKit
 import Firebase
 
+struct Restaurant {
+    let restaurantName: String
+    let restaurantEmail: String
+}
 
 class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
     var sheet = [refModel]()
-
+    //var restaurants = [Restaurant]()
+    //var RestaurantId: String = (FIRAuth.auth()?.currentUser?.email)!
+    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sheet.count
@@ -29,8 +35,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.getcountlb.text = sheetdata.count
         cell.getnotelb.text = sheetdata.note
         return cell
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild:"餐廳名稱").queryEqual(toValue: "李媽媽")
@@ -53,13 +59,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.table.reloadData()
             }
         })
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let black = UITableViewRowAction(style: .default, title: "黑名單") {(action, index) in
             let alertController = UIAlertController(title:"確定要將這位同學加入黑名單嗎？", message: "", preferredStyle: UIAlertControllerStyle.alert)
@@ -78,8 +79,12 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
             self.table.deleteRows(at: [indexPath], with: .fade)
         }
         done.backgroundColor = UIColor.red
-
        
         return[done, black]
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }

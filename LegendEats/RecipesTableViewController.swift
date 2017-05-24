@@ -158,4 +158,9 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
             //destinationViewController.recipe = recipes[indexPath!.row]
         }
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }

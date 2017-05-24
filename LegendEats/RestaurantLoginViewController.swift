@@ -14,11 +14,12 @@ class RestaurantLoginViewController: UIViewController {
 
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var passward: UITextField!
-    var restaurantEmail: [String] = ["Limama@ntust.com",
-                                     "Pinker@ntust.com",
-                                     "Haoxionlai@ntust.com",
-                                     "Gutzaowei@ntust.com"
+    var restaurants: [Restaurant] = [Restaurant(restaurantName: "李媽媽", restaurantEmail: "Limama@ntust.com"),
+                                     Restaurant(restaurantName: "品客自助餐", restaurantEmail: "Pinker@ntust.com"),
+                                     Restaurant(restaurantName: "豪享來", restaurantEmail: "Haoxionlai@ntust.com"),
+                                     Restaurant(restaurantName: "古早味", restaurantEmail: "Gutzaowei@ntust.com"),
                                     ]
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         //在firebase建立餐廳email
@@ -31,8 +32,10 @@ class RestaurantLoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-
-        if !restaurantEmail.contains(self.mail.text!) {
+        let found = restaurants.filter{ $0.restaurantEmail == self.mail.text}.count > 0
+        let foundIndex = restaurants.index{ $0.restaurantEmail == self.mail.text}
+        print(foundIndex)
+        if !found {
             let alertController = UIAlertController(title: "Error", message: "You don't have permission to login!!", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
