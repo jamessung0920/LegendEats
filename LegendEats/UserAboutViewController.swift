@@ -10,7 +10,17 @@ import UIKit
 
 class UserAboutViewController: UIViewController {
 
+    @IBAction func link(_ sender: UIButton) {
+        if let url = URL(string: "https://www.facebook.com/Legend-Eats-1367898509965698/") {
+            UIApplication.shared.open(url, options: [:]) {
+                boolean in
+                // do something with the boolean
+            }
+        }
+        
+    }
     override func viewDidLoad() {
+        self.title = "About Legend Eats"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
