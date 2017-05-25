@@ -41,7 +41,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func initializeTheRecipes() {
-        self.recipes = [Recipe(name: "李媽媽", thumbnails: "egg_benedict.jpg", prepTime: "1 hour"),
+        self.recipes = [Recipe(name: "李媽媽", thumbnails: "fish.jpeg", prepTime: "1 hour"),
                         Recipe(name: "品客自助餐", thumbnails: "ham_and_egg_sandwich.jpg", prepTime: "30 min"),
                         Recipe(name: "豪享來", thumbnails: "full_breakfast.jpg", prepTime: "25 min"),
                         Recipe(name: "古早味", thumbnails: "hamburger.jpg", prepTime: "15 min"),
@@ -110,7 +110,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
             cell.configurateTheCell(recipes[indexPath.row])
         }
         
-        cell.contentView.backgroundColor = UIColor.darkGray
+        cell.contentView.backgroundColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0)
         
         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 275))
         

@@ -23,6 +23,15 @@ class UserOrderViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        cell.contentView.backgroundColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+        cell.contentView.layer.cornerRadius = 7.0
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 50, height: 172))
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [255.0, 255.0, 255.0, 1.0])
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 7.0
+        cell.contentView.addSubview(whiteRoundedView)
+        cell.contentView.sendSubview(toBack: whiteRoundedView)
+        
         let sheetdata: refModel
         sheetdata = sheet[indexPath.row]
         cell.emaillb.text = sheetdata.email

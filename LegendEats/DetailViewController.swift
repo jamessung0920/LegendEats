@@ -29,7 +29,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     
     @IBAction func submit(_ sender: UIButton)
     {
-        if lbmeal.text! == "--請下拉選擇餐點--" || stepper.value == 0.0
+        if lbmeal.text! == "今天想吃？" || lbmeal.text! == "--請下拉選擇餐點--" || stepper.value == 0.0
         {
             let alertController = UIAlertController(title:"尚未完成訂餐", message:"返回訂餐", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "ok!!", style: UIAlertActionStyle.default, handler:nil))
@@ -53,7 +53,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         lbpicker.delegate = self
         stepper.addTarget(self, action: #selector(DetailViewController.stepperValueChanged), for: .valueChanged)
         ref = FIRDatabase.database().reference().child("student")
-
+        lbmeal.layer.borderWidth = 2.0
+        lbmeal.layer.cornerRadius = 8
+        lbmeal.layer.borderColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
         //當前系統日期
         let date = Date()
         let formatter = DateFormatter()
@@ -92,6 +94,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         {
             meals = ["--請下拉選擇餐點--","滷肉飯 $135", "雞肉飯 $135"]
         }
+        
 
     }
     func numberOfComponent(in pickerView: UIPickerView) ->Int
