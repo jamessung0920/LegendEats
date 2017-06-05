@@ -21,6 +21,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     var recipe: Recipe?
     var studentId: String = (FIRAuth.auth()?.currentUser?.email)!
     var result: String?
+    var finish : String = "No"
     
     @IBOutlet weak var note: UITextField!
     @IBOutlet weak var lbmeal: UILabel!
@@ -112,6 +113,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         lbmeal.text = meals[row]
+        if meals[row] == "--請下拉選擇餐點--" {
+            lbmeal.text = "今天想吃？"
+        }
     }
     func stepperValueChanged(stepper: GMStepper) {
         print(stepper.value, terminator: "")
@@ -121,13 +125,15 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         let key = ref.childByAutoId().key
         let dilimiter = " "
         let meal = lbmeal.text?.components(separatedBy: dilimiter)
+        
         let student: [String: Any] = [
             "學號信箱":studentId,
             "餐廳名稱":nameLabel?.text,
             "餐點":meal![0] as String,
             "數量":String(Int(stepper.value)) as String,
             "訂購時間":result,
-            "備註":note.text! as String
+            "備註":note.text! as String,
+            "完成":finish
         ]
         ref.child(key).setValue(student)
     }

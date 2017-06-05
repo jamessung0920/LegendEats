@@ -19,6 +19,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var table: UITableView!
     var sheet = [refModel]()
     var restaurantReceived = [Restaurant]()
+    var keyForFinish : [String] = []
+    var keyForFinishIndex : Int = 0
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,9 +51,10 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild:"餐廳名稱").queryEqual(toValue: restaurantReceived[0].restaurantName)
         query.observe(FIRDataEventType.value, with:{(snapshot) in
-            if snapshot.childrenCount>0
+            if snapshot.childrenCount > 0
             {
                 self.sheet.removeAll()
+                //print("---------Start---------")
                 for student in snapshot.children.allObjects as![FIRDataSnapshot]
                 {
                     let sheetOjbect = student.value as? [String: AnyObject]
@@ -60,10 +63,21 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
                     let sheetcount = sheetOjbect?["數量"] as! String?
                     let sheettime = sheetOjbect?["訂購時間"] as! String?
                     let sheetnote = sheetOjbect?["備註"] as! String?
+                    let sheetfinish = sheetOjbect?["完成"] as! String?
+                    
+                    if sheetfinish == "Yes" {
+                        continue
+                    }
+                    
+                    self.keyForFinish.insert(student.key, at: self.keyForFinishIndex)
+                    self.keyForFinishIndex += 1
+    
+                    //print(self.keyForFinish)
+                    
                     let sheetdata = refModel(email: sheetemail, meal: sheetmeal, count: sheetcount, time: sheettime, note: sheetnote)
                     self.sheet.append(sheetdata)
                 }
-                
+                //print("---------End---------\n\n\n")
                 self.table.reloadData()
             }
         })
@@ -85,11 +99,18 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         let done = UITableViewRowAction(style: .destructive, title: "完成") {(action, index) in
             self.sheet.remove(at: indexPath.row)
             self.table.deleteRows(at: [indexPath], with: .fade)
+            let finishRef  = FIRDatabase.database().reference().child("student").child(self.keyForFinish[indexPath.row])
+            finishRef.updateChildValues(["完成":"Yes"])
+            //print(self.keyForFinish[indexPath.row])
+            self.keyForFinish.removeAll()
+            self.keyForFinishIndex = 0
         }
         done.backgroundColor = UIColor.red
        
         return[done, black]
     }
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

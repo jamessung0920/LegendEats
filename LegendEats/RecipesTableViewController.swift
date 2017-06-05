@@ -41,7 +41,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func initializeTheRecipes() {
-        self.recipes = [Recipe(name: "李媽媽", thumbnails: "fish.jpeg", prepTime: "1 hour"),
+        self.recipes = [Recipe(name: "李媽媽", thumbnails: "egg_benedict.jpg", prepTime: "1 hour"),
                         Recipe(name: "品客自助餐", thumbnails: "ham_and_egg_sandwich.jpg", prepTime: "30 min"),
                         Recipe(name: "豪享來", thumbnails: "full_breakfast.jpg", prepTime: "25 min"),
                         Recipe(name: "古早味", thumbnails: "hamburger.jpg", prepTime: "15 min"),
@@ -132,12 +132,12 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
         return recipes.count
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    /*func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             recipes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
-    }
+    }*/
     
     override func viewWillAppear(_ animated: Bool) {
         if let index = self.tableViewResult.indexPathForSelectedRow{

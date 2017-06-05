@@ -10,7 +10,6 @@
 		4BAAAFAB1EC7076C001F7A2A /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */; };
 		4BAAAFAD1EC71AAF001F7A2A /* RestaurantLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAC1EC71AAF001F7A2A /* RestaurantLoginViewController.swift */; };
 		4BAAAFAF1EC74671001F7A2A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAAFAE1EC74671001F7A2A /* RestaurantViewController.swift */; };
-		4BAAB0331ED606E4001F7A2A /* fish.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4BAAB0321ED606E4001F7A2A /* fish.jpeg */; };
 		4FD40656E50260FFBCA98E56 /* Pods_LegendEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */; };
 		D3325EE81EC71F4800316926 /* UserAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3325EE71EC71F4700316926 /* UserAboutViewController.swift */; };
 		D3325EF11EC9557E00316926 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3325EEC1EC9557E00316926 /* Info.plist */; };
@@ -362,7 +361,6 @@
 		4BAAAFAA1EC7076C001F7A2A /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
 		4BAAAFAC1EC71AAF001F7A2A /* RestaurantLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantLoginViewController.swift; sourceTree = "<group>"; };
 		4BAAAFAE1EC74671001F7A2A /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
-		4BAAB0321ED606E4001F7A2A /* fish.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fish.jpeg; path = ../../../../../../Desktop/fish.jpeg; sourceTree = "<group>"; };
 		5F28B8B8A76667D5BBA7549C /* Pods-LegendEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.debug.xcconfig"; sourceTree = "<group>"; };
 		612A713C9BCC6109DCADFFC4 /* Pods_LegendEats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LegendEats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901BA97069D0B369B497F77E /* Pods-LegendEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LegendEats.release.xcconfig"; path = "Pods/Target Support Files/Pods-LegendEats/Pods-LegendEats.release.xcconfig"; sourceTree = "<group>"; };
@@ -827,7 +825,6 @@
 		D34E0B7C1EB8DABB007CF80D /* iconbeast lite 300 - png */ = {
 			isa = PBXGroup;
 			children = (
-				4BAAB0321ED606E4001F7A2A /* fish.jpeg */,
 				D34E0B7D1EB8DABB007CF80D /* 3d.png */,
 				D34E0B7E1EB8DABB007CF80D /* abacus.png */,
 				D34E0B7F1EB8DABB007CF80D /* airplane.png */,
@@ -1303,7 +1300,6 @@
 				D34E0D211EB8DABC007CF80D /* dumbbell.png in Resources */,
 				D34E0DEA1EB8DABC007CF80D /* angry_birds_cake.jpg in Resources */,
 				D34E0D4F1EB8DABC007CF80D /* keyboard.png in Resources */,
-				4BAAB0331ED606E4001F7A2A /* fish.jpeg in Resources */,
 				D34E0D011EB8DABC007CF80D /* cctv.png in Resources */,
 				D34E0D931EB8DABC007CF80D /* recycle-bin.png in Resources */,
 				D34E0D2A1EB8DABC007CF80D /* factory-pollution.png in Resources */,
