@@ -13,7 +13,6 @@ class refModel
     var count: String?
     var time: String?
     var note: String?
-    //var shit: String? = "shit"
     
     
     init(email: String?, meal: String?, count: String?, time: String?, note: String?)

@@ -12,6 +12,7 @@ import FirebaseAuth
 
 
 var ref: FIRDatabaseReference!
+var ref2: FIRDatabaseReference!
 
 class HomeViewController: UIViewController {
 

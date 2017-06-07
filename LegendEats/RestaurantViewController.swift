@@ -49,6 +49,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref2 = FIRDatabase.database().reference().child("blockstudent")
         let query = FIRDatabase.database().reference().child("student").queryOrdered(byChild:"餐廳名稱").queryEqual(toValue: restaurantReceived[0].restaurantName)
         query.observe(FIRDataEventType.value, with:{(snapshot) in
             if snapshot.childrenCount > 0
@@ -89,7 +90,8 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
             alertController.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.destructive, handler: {action in
                 self.sheet.remove(at: indexPath.row)
                 self.table.deleteRows(at: [indexPath], with: .fade)
-
+                self.data()
+                
             }))
             alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler:nil))
             
@@ -110,7 +112,14 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         return[done, black]
     }
 
-    
+    func data()
+    {
+        let key = ref2.childByAutoId().key
+        let student = [ "student number": "test@ntust.com"
+                      ]
+        ref2.child(key).setValue(student)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

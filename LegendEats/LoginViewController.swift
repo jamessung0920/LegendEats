@@ -32,7 +32,9 @@ class LoginViewController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
             
-        } else {
+        }
+        else
+        {
             
             FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 
@@ -56,6 +58,17 @@ class LoginViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
+        }
+        if self.emailTextField.text! == "test@ntust.com"
+        {
+            let alertController = UIAlertController(title: "Error", message: "block!!", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+
         }
     }
     
