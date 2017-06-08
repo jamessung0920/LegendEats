@@ -89,6 +89,11 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         let black = UITableViewRowAction(style: .default, title: "黑名單") {(action, index) in
             let alertController = UIAlertController(title:"確定要將這位同學加入黑名單嗎？", message: "", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.destructive, handler: {action in
+                let finishRef  = FIRDatabase.database().reference().child("student").child(self.keyForFinish[indexPath.row])
+                finishRef.updateChildValues(["完成":"Yes"])
+                //print(self.keyForFinish[indexPath.row])
+                self.keyForFinish.removeAll()
+                self.keyForFinishIndex = 0
                 
                 let sheetdata: refModel
                 sheetdata = self.sheet[indexPath.row]

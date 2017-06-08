@@ -1,9 +1,9 @@
 //
-//  SignUpViewController.swift
-//  FirebaseTutorial
+//  AppDelegate.swift
+//  LegendEats
 //
-//  Created by James Dacombe on 16/11/2016.
-//  Copyright © 2016 AppCoda. All rights reserved.
+//  Created by 宋佺儒 on 2017/4/24.
+//  Copyright © 2017年 宋佺儒. All rights reserved.
 //
 
 import UIKit

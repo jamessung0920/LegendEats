@@ -1,9 +1,9 @@
 //
-//  DetailViewController.swift
-//  Swift-TableView-Example
+//  ViewControllerTableViewCell.swift
+//  appproject
 //
-//  Created by Bilal ARSLAN on 12/10/14.
-//  Copyright (c) 2014 Bilal ARSLAN. All rights reserved.
+//  Created by 李文慈 on 2017/4/27.
+//  Copyright © 2017年 lulu. All rights reserved.
 //
 
 import Foundation

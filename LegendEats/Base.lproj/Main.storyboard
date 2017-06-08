@@ -526,7 +526,7 @@
         <scene sceneID="shx-rg-uHA">
             <objects>
                 <navigationController storyboardIdentifier="Navigator" id="bmp-bj-1XS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SFT-q5-ws5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFT-q5-ws5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -943,14 +943,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="A2T-Cc-Cbz">
-                        <barButtonItem key="rightBarButtonItem" image="shopping-cart.png" id="z7Y-Lx-iBe">
-                            <color key="tintColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="rJB-xH-SFQ" kind="show" id="wOg-YJ-lmx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="A2T-Cc-Cbz"/>
                     <connections>
                         <outlet property="searchBar" destination="W59-MX-wVm" id="pca-wv-Py4"/>
                         <outlet property="tableViewResult" destination="1fe-nK-wEk" id="pj6-9C-vpN"/>
@@ -984,7 +977,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rR7-XZ-uP9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="User" image="man.png" selectedImage="man.png" id="bPy-fF-NyK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a2L-a7-z5M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2L-a7-z5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1047,7 +1040,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7w-Vd-C2m" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="man.png" systemItem="search" id="jI8-3O-OWz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sJt-e2-ctC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sJt-e2-ctC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1284,7 +1277,6 @@
         <image name="cover" width="225" height="225"/>
         <image name="facebook" width="225" height="225"/>
         <image name="man.png" width="30" height="30"/>
-        <image name="shopping-cart.png" width="29" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rFg-re-7lu"/>

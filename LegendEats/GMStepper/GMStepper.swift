@@ -1,9 +1,9 @@
 //
-//  GMStepper.swift
-//  GMStepper
+//  AppDelegate.swift
+//  LegendEats
 //
-//  Created by Gunay Mert Karadogan on 1/7/15.
-//  Copyright © 2015 Gunay Mert Karadogan. All rights reserved.
+//  Created by 宋佺儒 on 2017/4/24.
+//  Copyright © 2017年 宋佺儒. All rights reserved.
 //
 
 import UIKit

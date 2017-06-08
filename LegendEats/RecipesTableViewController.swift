@@ -1,9 +1,9 @@
 //
-//  RecipesTableViewController.swift
-//  Swift-TableView-Example
+//  ViewControllerTableViewCell.swift
+//  appproject
 //
-//  Created by Bilal Arslan on 28/02/16.
-//  Copyright © 2016 Bilal ARSLAN. All rights reserved.
+//  Created by 李文慈 on 2017/4/27.
+//  Copyright © 2017年 lulu. All rights reserved.
 //
 
 import UIKit
