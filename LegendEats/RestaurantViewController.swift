@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 struct Restaurant {
     let restaurantName: String
     let restaurantEmail: String
@@ -88,11 +89,16 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         let black = UITableViewRowAction(style: .default, title: "黑名單") {(action, index) in
             let alertController = UIAlertController(title:"確定要將這位同學加入黑名單嗎？", message: "", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.destructive, handler: {action in
+                
+                let sheetdata: refModel
+                sheetdata = self.sheet[indexPath.row]
+                let key = ref2.childByAutoId().key
+                let student = [ "student number": sheetdata.email as String!
+                ]
+                ref2.child(key).setValue(student)
                 self.sheet.remove(at: indexPath.row)
                 self.table.deleteRows(at: [indexPath], with: .fade)
-                self.data()
-                
-            }))
+                }))
             alertController.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler:nil))
             
             self.present(alertController, animated: true, completion: nil)
@@ -110,14 +116,6 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         done.backgroundColor = UIColor.red
        
         return[done, black]
-    }
-
-    func data()
-    {
-        let key = ref2.childByAutoId().key
-        let student = [ "student number": "test@ntust.com"
-                      ]
-        ref2.child(key).setValue(student)
     }
 
     

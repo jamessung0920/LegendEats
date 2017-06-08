@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -526,7 +526,7 @@
         <scene sceneID="shx-rg-uHA">
             <objects>
                 <navigationController storyboardIdentifier="Navigator" id="bmp-bj-1XS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFT-q5-ws5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SFT-q5-ws5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -984,7 +984,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rR7-XZ-uP9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="User" image="man.png" selectedImage="man.png" id="bPy-fF-NyK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2L-a7-z5M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a2L-a7-z5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1047,7 +1047,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7w-Vd-C2m" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="man.png" systemItem="search" id="jI8-3O-OWz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sJt-e2-ctC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sJt-e2-ctC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1287,8 +1287,8 @@
         <image name="shopping-cart.png" width="29" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d7R-4T-WIa"/>
+        <segue reference="rFg-re-7lu"/>
         <segue reference="beR-1q-6vA"/>
-        <segue reference="V5Z-ei-lQN"/>
+        <segue reference="d7R-4T-WIa"/>
     </inferredMetricsTieBreakers>
 </document>

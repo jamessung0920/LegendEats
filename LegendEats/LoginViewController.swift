@@ -11,13 +11,29 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
-
+    var blockStudentNumberArray = [String]()
+    
 //Outlets
 @IBOutlet weak var emailTextField: UITextField!
 @IBOutlet weak var passwordTextField: UITextField!
 
-
+    override func viewDidLoad() {
+                super.viewDidLoad()
+                    ref2 = FIRDatabase.database().reference().child("blockstudent")
+                let query_block = ref2.queryOrdered(byChild: "student number")
+            query_block.observe(FIRDataEventType.value, with:{(snapshot) in
+                    if snapshot.childrenCount > 0
+                    {
+                    for blockstudent in snapshot.children.allObjects as![FIRDataSnapshot]
+                        {
+                            let Object = blockstudent.value as? [String: AnyObject]
+                            let blockStudentNumber = Object?["student number"] as! String?
+                            self.blockStudentNumberArray.append(blockStudentNumber!)
+                            print(self.blockStudentNumberArray)
+                        }
+                    }
+                })
+        }
     //Login Action
     @IBAction func loginAction(_ sender: AnyObject) {
         
@@ -58,18 +74,15 @@ class LoginViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-        }
-        if self.emailTextField.text! == "test@ntust.com"
-        {
-            let alertController = UIAlertController(title: "Error", message: "block!!", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
-            
-
+            if self.blockStudentNumberArray.contains(self.emailTextField.text!)
+            {
+                    let alertController = UIAlertController(title: "Error", message: "Your account have been blocked!!", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
-    
 }
