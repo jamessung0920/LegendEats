@@ -11,17 +11,18 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    var blockStudentNumberArray = [String]()
     
-//Outlets
-@IBOutlet weak var emailTextField: UITextField!
-@IBOutlet weak var passwordTextField: UITextField!
+    var blockStudentNumberArray = [String]()
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var coverImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        //self.view.backgroundColor = UIColor(rgb: 0xFFFFFF)
+        self.coverImage.layer.cornerRadius = 6.4
+        self.coverImage.clipsToBounds = true
         ref2 = FIRDatabase.database().reference().child("blockstudent")
         let query_block = ref2.queryOrdered(byChild: "student number")
         query_block.observe(FIRDataEventType.value, with:{(snapshot) in

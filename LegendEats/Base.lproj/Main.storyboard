@@ -25,7 +25,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-on-poq">
                                 <rect key="frame" x="160" y="579" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -49,9 +48,8 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbi-vz-ndh">
                                 <rect key="frame" x="167" y="394" width="42" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.73483615451388884" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="pHr-FP-01c" eventType="touchUpInside" id="Ijo-z9-hLC"/>
@@ -82,7 +80,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cyan="0.63" magenta="0.319091796875" yellow="0.11727861315011978" black="0.21559289383561644" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hf1-on-poq" firstAttribute="top" secondItem="vYF-4t-A2Z" secondAttribute="bottom" constant="8" symbolic="YES" id="0vz-7U-0ND"/>
                             <constraint firstAttribute="bottom" secondItem="cTM-6G-or4" secondAttribute="bottom" constant="20" symbolic="YES" id="4hi-2P-xYS"/>
@@ -106,6 +104,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImage" destination="Wqm-Fz-Bg9" id="sXp-yI-wXp"/>
                         <outlet property="emailTextField" destination="0iC-Yr-4x0" id="M5n-Cc-Iwv"/>
                         <outlet property="passwordTextField" destination="sWX-1N-KFc" id="9Cp-Km-Yig"/>
                     </connections>
@@ -142,7 +141,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpl-SG-ZV4">
                                 <rect key="frame" x="160" y="417" width="55" height="30"/>
-                                <state key="normal" title="Log In"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.0" green="0.73333333333333328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="login:" destination="bzg-jj-Qga" eventType="touchUpInside" id="jVP-bQ-u3E"/>
                                 </connections>
@@ -179,7 +180,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cyan="0.63" magenta="0.3190917969" yellow="0.11727861320000001" black="0.21559289379999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vpl-SG-ZV4" firstAttribute="leading" secondItem="fD7-qD-lXm" secondAttribute="leadingMargin" constant="144" id="1pE-s2-QaC"/>
                             <constraint firstItem="6lW-FL-eMf" firstAttribute="top" secondItem="Dft-8s-qWT" secondAttribute="bottom" constant="41" id="232-3u-Hue"/>
@@ -368,12 +369,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aba-Jm-dsV">
                                 <rect key="frame" x="160" y="394" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.0" green="0.73333333333333328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="createAccountAction:" destination="eaE-HM-yhK" eventType="touchUpInside" id="jmE-3W-QUv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-pE-zr1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghp-pE-zr1">
                                 <rect key="frame" x="136" y="69" width="103" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="Skw-Rc-3IY"/>
@@ -393,7 +396,7 @@
                                 <rect key="frame" x="158" y="166" width="59" height="59"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cyan="0.63" magenta="0.3190917969" yellow="0.11727861320000001" black="0.21559289379999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gWz-TH-YrP" secondAttribute="trailing" constant="142" id="1yu-f4-XaJ"/>
                             <constraint firstItem="Mzg-Nq-DOO" firstAttribute="trailing" secondItem="Y1y-V3-dml" secondAttribute="trailingMargin" id="2jv-Eb-RQB"/>
@@ -464,7 +467,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ser-lp-UgN">
                                 <rect key="frame" x="133" y="356" width="109" height="30"/>
-                                <state key="normal" title="Reset Password"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="0.0" green="0.73333333333333328" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="submitAction:" destination="bAG-8A-jcZ" eventType="touchUpInside" id="Qvp-wW-Pdk"/>
                                 </connections>
@@ -488,7 +493,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cyan="0.63" magenta="0.3190917969" yellow="0.11727861320000001" black="0.21559289379999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="F45-n3-r3E" firstAttribute="leading" secondItem="aan-kp-ee1" secondAttribute="leadingMargin" constant="142" id="44K-U9-SrR"/>
                             <constraint firstItem="wvG-cB-RDR" firstAttribute="leading" secondItem="aan-kp-ee1" secondAttribute="leadingMargin" constant="84" id="84w-0g-fHn"/>
@@ -750,7 +755,7 @@
                                     <constraint firstAttribute="height" constant="136" id="uTN-sU-gxl"/>
                                 </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQu-ep-GOL">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQu-ep-GOL">
                                 <rect key="frame" x="174" y="575" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="提交">
@@ -807,7 +812,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.11211480034722222" yellow="0.46790907118055558" black="0.090673159246575347" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="0Je-Dc-L26" firstAttribute="trailing" secondItem="p7d-Ve-QzD" secondAttribute="trailing" id="1yR-Ry-uXg"/>
                             <constraint firstItem="0Je-Dc-L26" firstAttribute="leading" secondItem="cEX-37-Pdq" secondAttribute="leading" id="2BA-C9-blX"/>
@@ -1021,7 +1026,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.11211480034722222" yellow="0.46790907118055558" black="0.090673159246575347" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="7qW-9c-1W8">
                         <barButtonItem key="rightBarButtonItem" title="LogOut" id="G7t-G0-yYn">
@@ -1245,7 +1250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.11211480034722222" yellow="0.46790907118055558" black="0.090673159246575347" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="vgV-d0-okj" firstAttribute="top" secondItem="6go-mD-RhE" secondAttribute="bottom" constant="21" id="3CD-oD-BgZ"/>
                             <constraint firstItem="COo-BW-1BB" firstAttribute="leading" secondItem="T5p-HM-yEb" secondAttribute="trailing" constant="6" id="4z0-LV-biv"/>
@@ -1282,7 +1287,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MqV-y1-dHY"/>
-        <segue reference="9Y4-8t-EKY"/>
+        <segue reference="jCO-ed-QLw"/>
         <segue reference="beR-1q-6vA"/>
     </inferredMetricsTieBreakers>
 </document>
