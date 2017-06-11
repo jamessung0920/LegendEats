@@ -11,9 +11,10 @@ import Firebase
 import FirebaseAuth
 
 class RestaurantLoginViewController: UIViewController, UITextFieldDelegate {
-
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var passward: UITextField!
+    @IBOutlet weak var coverImage: UIImageView!
+    
     var restaurants: [Restaurant] = [Restaurant(restaurantName: "李媽媽", restaurantEmail: "Limama@ntust.com"),
                                      Restaurant(restaurantName: "品客自助餐", restaurantEmail: "Pinker@ntust.com"),
                                      Restaurant(restaurantName: "豪享來", restaurantEmail: "Haoxionlai@ntust.com"),
@@ -29,6 +30,9 @@ class RestaurantLoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.mail.delegate = self
         self.passward.delegate = self
+        self.coverImage.layer.cornerRadius = 6.4
+        self.coverImage.clipsToBounds = true
+        
         //在firebase建立餐廳email
        /* for index in 0 ..< restaurants.endIndex {
             FIRAuth.auth()?.createUser(withEmail: restaurants[index].restaurantEmail, password: "123456")

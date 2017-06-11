@@ -15,10 +15,13 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     // Outlets
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var coverImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTextField.delegate = self
+        self.coverImage.layer.cornerRadius = 6.4
+        self.coverImage.clipsToBounds = true
     }
 
     // Reset Password Action

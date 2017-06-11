@@ -213,6 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImage" destination="bsh-57-RyV" id="9g3-9Y-C7L"/>
                         <outlet property="mail" destination="rf4-oU-eRR" id="9Zh-yG-VN7"/>
                         <outlet property="passward" destination="b5y-Td-MZk" id="fuA-0x-bEi"/>
                     </connections>
@@ -429,6 +430,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImage" destination="gWz-TH-YrP" id="F3M-pz-pEc"/>
                         <outlet property="emailTextField" destination="Mzg-Nq-DOO" id="j4Y-Ig-TEt"/>
                         <outlet property="passwordTextField" destination="gDl-65-jdF" id="EqT-3l-k4i"/>
                     </connections>
@@ -522,6 +524,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImage" destination="Fom-jf-9Xz" id="VBX-99-dTg"/>
                         <outlet property="emailTextField" destination="Gdf-9o-97X" id="qga-oy-uH3"/>
                     </connections>
                 </viewController>
@@ -1286,8 +1289,8 @@
         <image name="man.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MqV-y1-dHY"/>
-        <segue reference="jCO-ed-QLw"/>
-        <segue reference="beR-1q-6vA"/>
+        <segue reference="d7R-4T-WIa"/>
+        <segue reference="2GW-oL-lat"/>
+        <segue reference="9Y4-8t-EKY"/>
     </inferredMetricsTieBreakers>
 </document>

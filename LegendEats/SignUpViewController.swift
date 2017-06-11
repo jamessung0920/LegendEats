@@ -16,11 +16,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var coverImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
+        self.coverImage.layer.cornerRadius = 6.4
+        self.coverImage.clipsToBounds = true
     }
     
     //Sign Up Action for email
