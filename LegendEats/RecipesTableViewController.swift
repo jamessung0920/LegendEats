@@ -45,10 +45,10 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
                         Recipe(name: "品客自助餐", thumbnails: "ham_and_egg_sandwich.jpg", prepTime: "30 min"),
                         Recipe(name: "豪享來", thumbnails: "full_breakfast.jpg", prepTime: "25 min"),
                         Recipe(name: "古早味", thumbnails: "hamburger.jpg", prepTime: "15 min"),
-                        Recipe(name: "李媽媽1", thumbnails: "green_tea.jpg", prepTime: "2 hour"),
-                        Recipe(name: "品客自助餐1", thumbnails: "creme_brelee.jpg", prepTime: "50 min"),
-                        Recipe(name: "豪享來1", thumbnails: "instant_noodle_with_egg.jpg", prepTime: "55 min"),
-                        Recipe(name: "古早味1", thumbnails: "vegetable_curry.jpg", prepTime: "25 min"),
+                        Recipe(name: "李爸爸", thumbnails: "green_tea.jpg", prepTime: "2 hour"),
+                        Recipe(name: "品嗑自助餐", thumbnails: "creme_brelee.jpg", prepTime: "50 min"),
+                        Recipe(name: "豪享吃", thumbnails: "instant_noodle_with_egg.jpg", prepTime: "55 min"),
+                        Recipe(name: "古早味分店", thumbnails: "vegetable_curry.jpg", prepTime: "25 min"),
                        ]
         
         self.tableViewResult.reloadData()
@@ -58,6 +58,9 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         if(filtered.count == 0){
@@ -77,6 +80,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
+        self.searchBar.endEditing(true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -150,7 +154,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
         if segue.identifier == "recipeDetail" {
             let indexPath = self.tableViewResult!.indexPathForSelectedRow
             let destinationViewController: DetailViewController = segue.destination as! DetailViewController
-            if(searchActive) {
+            if(!filteredRecipes.isEmpty) {
                 destinationViewController.recipe = filteredRecipes[indexPath!.row]
             } else {
                 destinationViewController.recipe = recipes[indexPath!.row]
@@ -163,4 +167,7 @@ class RecipesTableViewController: UIViewController, UITableViewDataSource, UITab
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
+
+

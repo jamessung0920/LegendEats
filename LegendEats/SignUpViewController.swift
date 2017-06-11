@@ -11,11 +11,18 @@ import Firebase
 import FirebaseAuth
 
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+    
     //Sign Up Action for email
     @IBAction func createAccountAction(_ sender: AnyObject) {
         if emailTextField.text == "" {
@@ -29,8 +36,17 @@ class SignUpViewController: UIViewController {
         } else {
             FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                 
+                if !(self.emailTextField.text?.contains("@ntust.com"))! {
+                    let alertController = UIAlertController(title: "Error", message: "Your Email form isn't allowed, Please type like xxxxx@ntust.com", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
                 if error == nil {
-                    print("You have successfully signed up")
+                    print("You have successfully signed up!!!!")
                     //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
@@ -46,6 +62,17 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // 按畫面結束編輯
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    // 按return結束編輯
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return (true)
     }
     
     

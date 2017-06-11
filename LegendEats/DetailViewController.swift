@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class DetailViewController: UIViewController, UIPickerViewDelegate {
+class DetailViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var stepper: GMStepper!
     @IBOutlet var imageView: UIImageView?
@@ -47,6 +47,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.note.delegate = self
         navigationItem.title = recipe?.name
         imageView?.image = UIImage(named: recipe!.thumbnails)
         nameLabel?.text = recipe!.name
@@ -79,19 +80,19 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
         {
             meals = ["--請下拉選擇餐點--","滷肉飯 $35", "雞肉飯 $35"]
         }
-        else if nameLabel?.text == "李媽媽1"
+        else if nameLabel?.text == "李爸爸"
         {
             meals = ["--請下拉選擇餐點--","麵 $160", "飯 $160"]
         }
-        else if nameLabel?.text == "品客自助餐1"
+        else if nameLabel?.text == "品嗑自助餐"
         {
             meals = ["--請下拉選擇餐點--","排骨 $170", "雞腿 $170"]
         }
-        else if nameLabel?.text == "豪享來1"
+        else if nameLabel?.text == "豪享吃"
         {
             meals = ["--請下拉選擇餐點--","炒泡麵 $150", "炒意麵 $150"]
         }
-        else if nameLabel?.text == "古早味1"
+        else if nameLabel?.text == "古早味分店"
         {
             meals = ["--請下拉選擇餐點--","滷肉飯 $135", "雞肉飯 $135"]
         }
@@ -136,6 +137,16 @@ class DetailViewController: UIViewController, UIPickerViewDelegate {
             "完成":finish
         ]
         ref.child(key).setValue(student)
+    }
+    
+    // 按畫面結束編輯
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    // 按return結束編輯
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        note.resignFirstResponder()
+        return (true)
     }
   
     

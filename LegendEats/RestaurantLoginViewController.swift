@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RestaurantLoginViewController: UIViewController {
+class RestaurantLoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var passward: UITextField!
@@ -18,15 +18,22 @@ class RestaurantLoginViewController: UIViewController {
                                      Restaurant(restaurantName: "品客自助餐", restaurantEmail: "Pinker@ntust.com"),
                                      Restaurant(restaurantName: "豪享來", restaurantEmail: "Haoxionlai@ntust.com"),
                                      Restaurant(restaurantName: "古早味", restaurantEmail: "Gutzaowei@ntust.com"),
+                                     Restaurant(restaurantName: "李爸爸", restaurantEmail: "Limama1@ntust.com"),
+                                     Restaurant(restaurantName: "品嗑自助餐", restaurantEmail: "Pinker1@ntust.com"),
+                                     Restaurant(restaurantName: "豪享吃", restaurantEmail: "Haoxionlai1@ntust.com"),
+                                     Restaurant(restaurantName: "古早味分店", restaurantEmail: "Gutzaowei1@ntust.com"),
+                                     
                                     ]
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mail.delegate = self
+        self.passward.delegate = self
         //在firebase建立餐廳email
-       /* for index in 0 ..< restaurantEmail.endIndex {
-            FIRAuth.auth()?.createUser(withEmail: restaurantEmail[index], password: "123456")
+       /* for index in 0 ..< restaurants.endIndex {
+            FIRAuth.auth()?.createUser(withEmail: restaurants[index].restaurantEmail, password: "123456")
             {(user, error) in
-                 print(self.restaurantEmail[index])
+                 print(self.restaurants[index].restaurantEmail)
             }
         } */
     }
@@ -84,4 +91,16 @@ class RestaurantLoginViewController: UIViewController {
             }
         }
     }
+    
+    // 按畫面結束編輯
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    // 按return結束編輯
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mail.resignFirstResponder()
+        passward.resignFirstResponder()
+        return (true)
+    }
+    
 }

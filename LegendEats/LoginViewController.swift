@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     var blockStudentNumberArray = [String]()
     
 //Outlets
@@ -18,22 +18,24 @@ class LoginViewController: UIViewController {
 @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
-                super.viewDidLoad()
-                    ref2 = FIRDatabase.database().reference().child("blockstudent")
-                let query_block = ref2.queryOrdered(byChild: "student number")
-            query_block.observe(FIRDataEventType.value, with:{(snapshot) in
-                    if snapshot.childrenCount > 0
-                    {
-                    for blockstudent in snapshot.children.allObjects as![FIRDataSnapshot]
-                        {
-                            let Object = blockstudent.value as? [String: AnyObject]
-                            let blockStudentNumber = Object?["student number"] as! String?
-                            self.blockStudentNumberArray.append(blockStudentNumber!)
-                            print(self.blockStudentNumberArray)
-                        }
-                    }
-                })
-        }
+        super.viewDidLoad()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        //self.view.backgroundColor = UIColor(rgb: 0xFFFFFF)
+        ref2 = FIRDatabase.database().reference().child("blockstudent")
+        let query_block = ref2.queryOrdered(byChild: "student number")
+        query_block.observe(FIRDataEventType.value, with:{(snapshot) in
+            if snapshot.childrenCount > 0
+            {
+                for blockstudent in snapshot.children.allObjects as![FIRDataSnapshot]
+                {
+                    let Object = blockstudent.value as? [String: AnyObject]
+                    let blockStudentNumber = Object?["student number"] as! String?
+                    self.blockStudentNumberArray.append(blockStudentNumber!)
+                }
+            }
+        })
+    }
     //Login Action
     @IBAction func loginAction(_ sender: AnyObject) {
         
@@ -67,7 +69,7 @@ class LoginViewController: UIViewController {
                     if error == nil {
                         
                         //Print into the console if successfully logged in
-                        print("You have successfully logged in")
+                        print("You have successfully logged in!!!!")
                         
                         //Go to the RecipesTableViewController if the login is sucessful
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar")
@@ -86,6 +88,17 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // 按畫面結束編輯
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    // 按return結束編輯
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return (true)
     }
     
 }

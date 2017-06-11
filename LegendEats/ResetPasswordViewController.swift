@@ -11,10 +11,15 @@ import Firebase
 import FirebaseAuth
 
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     // Outlets
     @IBOutlet weak var emailTextField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.emailTextField.delegate = self
+    }
 
     // Reset Password Action
     @IBAction func submitAction(_ sender: AnyObject)
@@ -50,6 +55,16 @@ class ResetPasswordViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             })
         }
+    }
+    
+    // 按畫面結束編輯
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    // 按return結束編輯
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        return (true)
     }
     
 
