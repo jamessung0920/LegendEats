@@ -9,19 +9,29 @@
 import UIKit
 
 class UserAboutViewController: UIViewController {
-
+    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var copyright: UIImageView!
     @IBAction func link(_ sender: UIButton) {
         if let url = URL(string: "https://www.facebook.com/Legend-Eats-1367898509965698/") {
-            UIApplication.shared.open(url, options: [:]) {
-                boolean in
+            UIApplication.shared.openURL(url)
+            //UIApplication.shared.open(url, options: [:]) {
+                //boolean in
                 // do something with the boolean
-            }
+            //}
         }
         
     }
     override func viewDidLoad() {
         self.title = "About Legend Eats"
         super.viewDidLoad()
+        self.coverImage.layer.cornerRadius = 6.4
+        self.coverImage.clipsToBounds = true
+        self.copyright.layer.cornerRadius = 9
+        self.copyright.clipsToBounds = true
+        
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
